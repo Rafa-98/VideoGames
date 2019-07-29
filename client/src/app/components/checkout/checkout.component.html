@@ -1,0 +1,52 @@
+<div class="col-md-4">    
+  <div class="container">
+      <p>Games in Cart: </p>
+      <ul>
+        <li *ngFor="let item of this.cart.gamesList">
+          {{item.title}} -- ${{item.price}}
+        </li>
+      </ul>       
+      <button class="btn btn-success" (click)="releaseCart()">Confirm Purchase</button>
+  </div>          
+</div>  
+
+<div class="col-md-8">    
+    <div class="container">
+        <p>Model:</p>
+
+
+        <div class="card bg-light mb-3" >
+          <div class="card-header text-center">
+            SENIAT<br>
+            RIF N°. J-30926957-7<br>
+            TechFirst & Associated<br>
+            Av. Fco Lazo Marti Edif. Mayoral plaza<br>
+            Telf: 0212-4074407<br><br>
+          </div>
+          <div class="card-body">
+            <p class="text-center">FACTURA</p>
+            N°: 7298<br>
+            Rafael Ricardo Mendez Nieves<br>
+            C.I /RIF: 26.483.231<br>
+            Dirección: EL VALLE<br>
+            <table class="table">
+              <thead>
+                <tr>                
+                  <th scope="col">Game</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let game of this.cart.gamesList">                  
+                  <th>{{game.title}}</th>
+                  <th>{{game.description}}</th>
+                  <th>${{game.price}}</th>
+                </tr>
+              </tbody>
+            </table>
+            <p>Total: ${{this.cart.amount}}</p>
+          </div>
+        </div>        
+    </div>          
+  </div>
